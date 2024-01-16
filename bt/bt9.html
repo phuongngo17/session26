@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1, 2, 5, 7];
+
+        function findMissingNumber(arr) {
+            let n = arr.length;
+
+            let seen = Array(n + 1).fill(false);
+
+            for (let i = 0; i < n; i++) {
+                if (arr[i] > 0 && arr[i] <= n) {
+                    seen[arr[i]] = true;
+                }
+            }
+
+            for (let j = 1; j <= n; j++) {
+                if (!seen[j]) {
+                    return j;
+                }
+            }
+
+            return n + 1;
+        }
+
+        let missingNumber = findMissingNumber(arr);
+
+        console.log("Phần tử lớn hơn 0 nhỏ nhất chưa xuất hiện trong mảng:", missingNumber);
+    </script>
+</body>
+
+</html>

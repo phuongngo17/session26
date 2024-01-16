@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = +prompt("Nhập số nguyên dương a:");
+        let b = +prompt("Nhập số nguyên dương b:");
+        if (a <= 0 || b <= 0) {
+            console.log("Vui lòng nhập số nguyên dương cho a và b.");
+        } else {
+            let resultArray = [];
+            for (let i = 1; i <= (a > b ? a : b); i++) {
+                if (i <= a && i % b === 0) {
+                    resultArray.push(i); // Thêm số chia hết cho b vào mảng
+                } else if (i <= b && i % a === 0) {
+                    resultArray.push(i); // Thêm số chia hết cho a vào mảng
+                }
+            }
+            console.log("Các số chia hết cho " + b + " trong khoảng từ 1 đến " + a + " hoặc các số chia hết cho " + a + " trong khoảng từ 1 đến " + b + ":");
+            console.log(resultArray);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+        let length = +prompt("Nhập chiều dài của hình chữ nhật:");
+        let width = +prompt("Nhập chiều rộng của hình chữ nhật:");
+
+        function findMinimumSquares(length, width) {
+            if (length === 0 || width === 0) {
+                return {
+                    count: 0,
+                    size: 0
+                };
+            }
+
+            if (length === width) {
+                return {
+                    count: 1,
+                    size: length
+                };
+            }
+
+            let gcd = calculateGCD(length, width);
+            let count = (length * width) / (gcd * gcd);
+            let size = gcd;
+
+            return {
+                count: count,
+                size: size
+            };
+        }
+
+        function calculateGCD(a, b) {
+            if (b === 0) {
+                return a;
+            }
+
+            return calculateGCD(b, a % b);
+        }
+
+        let result = findMinimumSquares(length, width);
+
+        console.log("Số hình vuông tối thiểu:", result.count);
+        console.log("Kích cỡ của mỗi hình vuông:", result.size);
+</script>
+</html>

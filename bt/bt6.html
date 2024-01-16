@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [5, -3, 8, -2, 0, -7, 4, -1];
+        let resultArray = [];
+        let negativeElements = [];
+        let positiveElements = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                negativeElements.push(arr[i]);
+            } else {
+                positiveElements.push(arr[i]);
+            }
+        }
+        resultArray = negativeElements.concat(positiveElements);
+
+        console.log("Mảng sau khi di chuyển các phần tử âm lên đầu và các phần tử dương về cuối:");
+        console.log(resultArray);
+    </script>
+</body>
+
+</html>
